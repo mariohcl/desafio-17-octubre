@@ -1,0 +1,42 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Products</h1>
+
+<div class="row row-main-custom">
+  <% @products.each do |product| %>
+
+    <div>
+
+
+
+              <p><%= product.name %></p>
+
+              <img src="<%= product.photo %>" alt="">
+
+
+            <% if user_signed_in? %>
+
+            <%= link_to product.user.name, profile_path(product.user) %>
+
+            <%= link_to 'Comprar', comprar_path(product) %>
+
+            <%= link_to 'Editar', edit_product_path(product) %>
+
+            <% end %>
+
+
+    </div>
+
+  <% end %>
+
+</div>
+
+
+
+
+<% if user_signed_in?%>
+
+<%= link_to 'New Product', new_product_path %>
+<%= link_to 'Mis ventas', ventas_path %>
+
+<% end %>

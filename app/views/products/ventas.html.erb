@@ -1,0 +1,22 @@
+<h1>Mis ventas</h1>
+
+<div class="row row-main-custom">
+<% @products.each do |product| %>
+
+
+<% if product.enable == false %>
+  <p><%= product.name %></p>
+  <% end %>
+
+<% end %>
+
+
+
+
+  <% if user_signed_in?%>
+
+  <%= link_to 'New Product', new_product_path %>
+
+  <% end %>
+
+</div>

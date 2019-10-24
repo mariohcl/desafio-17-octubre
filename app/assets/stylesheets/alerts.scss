@@ -1,0 +1,26 @@
+.alert-wrap{
+      position: fixed;
+      bottom: 0;
+      background: #2ed0ab;
+      width: 100%;
+      z-index: 999;
+
+    .alert-custom{
+      margin-bottom: 0;
+
+      p{
+        margin-bottom: 0;
+        color: white;
+        font-family: 'Poppins', sans-serif;
+
+        &:focus{
+          outline: 0;
+        }
+      }
+      button{
+        color: #FFEB3B;
+        opacity: inherit
+
+      }
+    }
+}

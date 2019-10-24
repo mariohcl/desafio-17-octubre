@@ -1,8 +1,6 @@
-<p id="notice"><%= notice %></p>
-
 <div class="wrap-container">
 
-<% @products.each do |product| %>
+<% @products.reverse.each do |product| %>
 
       <div class="product-card">
 
@@ -27,9 +25,13 @@
               <li>
                 <%= link_to 'Ver Producto', product %>
               </li>
+              <% if user_signed_in? && (current_user.id == product.user_id) %>
+
+              <% else %>
               <li>
                 <%= link_to 'Comprar', comprar_path(product) %>
               </li>
+              <% end %>
 
             </ul>
           </nav>
@@ -52,7 +54,10 @@
           <nav class="link-product">
             <ul>
               <li>
-                <a href="#">Comprar</a>
+                <%= link_to 'Ver Producto', product %>
+              </li>
+              <li>
+                <a href="<%= new_user_session_path %>">Comprar</a>
               </li>
             </ul>
           </nav>
@@ -67,10 +72,3 @@
 
 
 </div>
-
-<% if user_signed_in?%>
-
-<%= link_to 'New Product', new_product_path %>
-<%= link_to 'Mis ventas', ventas_path %>
-
-<% end %>

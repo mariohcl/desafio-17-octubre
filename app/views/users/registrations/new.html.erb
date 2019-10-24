@@ -1,34 +1,43 @@
-<h2>Sign up</h2>
+<div class="wrap-container wrap-container-login wrap-container-singup">
+
+  <div class="form-blo">
+
+    <h1>Regístrate</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      Dolore quam iure nisi velit, blanditiis minus.</p>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "users/shared/error_messages", resource: resource %>
 
   <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name, autofocus: true %>
+    <%= f.text_field :name, placeholder: "Nombre", autofocus: true %>
   </div>
 
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autocomplete: "email" %>
+    <%= f.email_field :email, placeholder: "E-mail", autocomplete: "email" %>
   </div>
 
   <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+    <%= f.password_field :password, placeholder: "Password (mínimo 6 caracteres)", autocomplete: "new-password" %>
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    <%= f.password_field :password_confirmation,  placeholder: "Confirmar password", autocomplete: "new-password" %>
   </div>
 
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "Enviar", class: 'btn-send' %>
   </div>
 <% end %>
 
 <%= render "users/shared/links" %>
+
+</div>
+<div class="form-blo">
+
+  <i class="fas fa-user-plus"></i>
+
+</div>
+
+
+</div>

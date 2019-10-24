@@ -1,0 +1,106 @@
+.wrap-container-ventas{
+  display: flex;
+  flex-direction: column;
+  padding-top: 150px;
+
+  h1{
+    font-family: 'Poppins', sans-serif;
+    font-size: 2em;
+    color: grey;
+    margin-bottom: 50px;
+    border-bottom: 1px solid #e6e6e6;
+    padding-bottom: 20px
+  }
+
+  .ventas-wrap{
+    display: flex;
+    justify-content: space-between;
+
+    div{
+      width: 45%;
+    }
+    h1{
+      font-size: 1.2em;
+      color: grey;
+      padding-bottom: 0;
+      border:none;
+      margin-bottom: 15px;
+      .fas{
+        color: #2ecc71;
+      }
+    }
+    .cont-product{
+      background-color: white;
+      padding: 15px;
+      width: 100%;
+      display: flex;
+      border-radius: 5px;
+      margin-bottom: 20px;
+
+      figure{
+        min-width: 150px;
+        max-width: 150px;
+        height: 150px;
+        overflow: hidden;
+        margin-right: 25px;
+        margin-bottom: 0;
+        background-size: cover;
+        background-position: center;
+        img{
+          width: 100%;
+        }
+      }
+      div{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        h2{
+          font-family: 'Poppins', sans-serif;
+          font-size: 1em;
+          color: grey;
+        }
+        p{
+          font-size: 0.7em;
+          color: #a2a2a2;
+        }
+        nav{
+          ul{
+            display: flex;
+            padding: 0;
+            margin-bottom: 0;
+            li{
+              list-style: none;
+              margin-right: 5px;
+              a{
+                &.btn-editar{
+                  &:before{
+                    font-family: "Font Awesome 5 Free"; font-weight: 400; content: "\f044";
+
+                  }
+                  &:hover{
+                    background: none;
+                    color: #2ecc71;
+                  }
+                }
+                &.btn-eliminar{
+                  &:before{
+                    font-family: "Font Awesome 5 Free"; font-weight: 400; content: "\f2ed";
+
+                  }
+                  &:hover{
+                    background: none;
+                    color: red;
+                  }
+                }
+
+              }
+            }
+          }
+        }
+      }
+    }
+
+  }
+}

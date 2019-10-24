@@ -1,22 +1,67 @@
+<div class="wrap-container wrap-container-ventas">
 <h1>Mis ventas</h1>
 
-<div class="row row-main-custom">
-<% @products.each do |product| %>
+<article class="ventas-wrap">
+  <div>
+    <h1><i class="fas fa-bullseye"></i> Productos Vendidos</h1>
+
+    <% @products.each do |product| %>
+    <div class="cont-product">
+
+    <% if product.enable == false %>
+    <figure style="background-image:url(<%= product.photo %>)">
+    </figure>
+    <div>
+      <h2><%= product.name %></h2>
+      <p><%= product.description %></p>
+      <nav>
+        <ul>
+          <li>
+            <%= link_to '', edit_product_path(product), class: "btn-editar" %>
+          </li>
+          <li>
+            <%= link_to '', product, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn-eliminar" %>
+          </li>
+        </ul>
+      </nav>
+      </div>
+      <% end %>
+
+    </div>
+    <% end %>
+
+  </div>
+
+  <div>
+    <h1><i class="fas fa-laptop"></i> Productos Publicados</h1>
+
+    <% @products.each do |product| %>
+    <div class="cont-product">
+
+    <% if product.enable == true %>
+    <figure style="background-image:url(<%= product.photo %>)">
+    </figure>
+    <div>
+      <h2><%= product.name %></h2>
+      <p><%= product.description %></p>
+      <nav>
+        <ul>
+          <li>
+            <%= link_to '', edit_product_path(product), class: "btn-editar" %>
+          </li>
+          <li>
+            <%= link_to '', product, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn-eliminar" %>
+          </li>
+        </ul>
+      </nav>
+      </div>
+      <% end %>
 
 
-<% if product.enable == false %>
-  <p><%= product.name %></p>
-  <% end %>
+    </div>
+    <% end %>
 
-<% end %>
-
-
-
-
-  <% if user_signed_in?%>
-
-  <%= link_to 'New Product', new_product_path %>
-
-  <% end %>
+  </div>
+</article>
 
 </div>

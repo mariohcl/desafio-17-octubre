@@ -11,17 +11,100 @@ html{
   background-color: #eff0f9;
   padding: 20px 0;
   border-bottom: 1px solid #dedfe2;
+  position: fixed;
+  width: 100%;
+  z-index: 9999;
+
+  .container-nav-custom{
+    min-width: 100%;
+    padding: 0 20px;
+
+    .navbar-custom{
+      padding: 0;
+
+      .navbar-nav-custom{
+
+        a{
+          padding: 13px 15px;
+          border-radius: 5px;
+          margin-right: 5px;
+          transition: all 0.3s ease-in;
+          font-size: 1em;
+          font-family: 'Poppins', sans-serif;
+          color: grey;
+
+          &.publicar{
+            color: #2ecc71;
+            font-weight: 700;
+
+            &:hover{
+              background: #2ecc71;
+              color: white;
+            }
+          }
+
+          &.name{
+            margin-left: 20px;
+            color: orange;
+            font-weight: 700;
+
+            &:before{
+              content:'';
+              background:url('thumbnail.jpeg');
+              position: absolute;
+              width: 20px;
+              height: 20px;
+              border-radius: 50%;
+              background-size: cover;
+              margin-left: -30px;
+            }
+            &:hover{
+              text-decoration: underline;
+            }
+          }
+
+          &:hover{
+            background: none;
+            text-decoration: underline;
+          }
+
+          &.salir{
+            &:hover{
+              color: red;
+            }
+          }
+
+        }
+      }
+
+
+
+      .brand-custom{
+        color: grey;
+        &:hover{
+          background: none;
+          opacity: 0.5;
+        }
+      }
+    }
+  }
 
   .brand-custom{
     font-family: 'Poppins', sans-serif;
-    font-size: 1.2em;
-    font-weight: 500;
+    font-size: 1.5em;
+    font-weight: 700;
+    span{
+      color: orange;
+      font-size: 1.3em;
+    }
   }
 
 }
 
 #notice{
   position: absolute;
+  background: red;
+  bottom: 0;
 }
 
 .wrap-container{
@@ -33,6 +116,7 @@ html{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  padding-top: 87px;
 }
 
 .product-card{
@@ -55,7 +139,7 @@ html{
     position: relative;
 
     &:before{
-      content: 'yapo-advertisement';
+      content: 'La idea es simple';
       font-family: 'Poppins', sans-serif;
       font-weight: 700;
       position: absolute;
@@ -230,8 +314,14 @@ footer{
   min-width: 1200px;
   margin: 7% auto 2%;
   font-family: 'Poppins', sans-serif;
+  text-align: center;
 
   p{
-    text-align: center;
+
+  }
+  span{
+    font-size: 0.7em;
+    white-space: pre-line;
+    color: grey;
   }
 }

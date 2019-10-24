@@ -1,3 +1,4 @@
+<div class="wrap-form">
 <%= form_with(model: product, local: true) do |form| %>
   <% if product.errors.any? %>
     <div id="error_explanation">
@@ -11,32 +12,50 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, id: :product_name %>
+  <fieldset>
+    <div class="form-group form-group-custom">
+      <%= form.label :name, "Nombre" %>
+      <div>
+        <%= form.text_field :name, id: :product_name %>
+      </div>
+    </div>
+
+    <div class="form-group form-group-custom">
+      <%= form.label :description, "Descripción" %>
+      <div>
+        <%= form.text_field :description, id: :product_description %>
+      </div>
+    </div>
+
+    <div class="form-group form-group-custom">
+      <%= form.label :photo, "URL imagen" %>
+      <div>
+        <%= form.text_field :photo, id: :product_photo %>
+      </div>
+    </div>
+
+    <div class="form-group form-group-custom">
+      <%= form.label :price, "Precio" %>
+      <div>
+        <%= form.text_field :price, id: :product_price %>
+      </div>
+    </div>
+
+    <div class="form-group form-group-custom">
+      <%= form.label :enable, "Disponible" %>
+      <div>
+        <%= form.check_box :enable, id: :product_enable %>
+      </div>
+    </div>
+
+    <div class="form-group">
+    <div>
+      <%= form.submit "Subir"%>
+      <%= link_to 'Volver', products_path, class: 'volver' %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_field :description, id: :product_description %>
-  </div>
+  </fieldset>
 
-  <div class="field">
-    <%= form.label :photo %>
-    <%= form.text_field :photo, id: :product_photo %>
-  </div>
-
-  <div class="field">
-    <%= form.label :price %>
-    <%= form.text_field :price, id: :product_price %>
-  </div>
-
-  <div class="field">
-    <%= form.label :enable %>
-    <%= form.check_box :enable, id: :product_enable %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
 <% end %>
+</div>

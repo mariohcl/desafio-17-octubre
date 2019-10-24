@@ -1,24 +1,31 @@
 <div class="container-menu">
-  <div class="container">
+  <div class="container container-nav-custom">
 
-    <nav class="navbar navbar-expand-lg navbar-light">
-        <a class="navbar-brand brand-custom" href="<%= root_path %>">Navbar</a>
+    <nav class="navbar navbar-expand-lg navbar-light navbar-custom">
+        <a class="navbar-brand brand-custom" href="<%= root_path %>">yapo</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div id="navbarNavDropdown" class="navbar-collapse collapse">
             <ul class="navbar-nav mr-auto">
             </ul>
-            <ul class="navbar-nav">            
-              <li class="nav-item">
+            <ul class="navbar-nav navbar-nav-custom">
+
               <% if user_signed_in? %>
+
+              <li class="nav-item"><%= link_to 'Publicar producto', new_product_path, class:'publicar' %></li>
+              <li class="nav-item"><%= link_to 'Mis ventas', ventas_path %></li>
+
+              <li class="nav-item">
                 <a href="#" class="name">
                   <%= current_user.name %>
                 </a>
-              <% end %>
+
+
               </li>
-              <% if user_signed_in? %>
-              <li class="nav-item"><a href="<%= destroy_user_session_path %>" data-method="DELETE"><i class="fas fa-power-off"></i> Salir</a></li>
+
+              <li class="nav-item"><a href="<%= destroy_user_session_path %>" class="salir" data-method="DELETE"><i class="fas fa-power-off"></i></a></li>
+
               <% else %>
               <li class="nav-item"><a href="<%= new_user_session_path %>">Ingreso</a></li>
               <li class="nav-item"><a href="<%= new_user_registration_path %>" class="reg">Registro</a></li>

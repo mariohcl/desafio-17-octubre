@@ -17,10 +17,9 @@
               <li class="nav-item"><%= link_to 'Mis ventas', ventas_path %></li>
 
               <li class="nav-item">
-                <a href="#" class="name">
+                <a href="<%= profile_path(:id) %>" class="name">
                   <%= current_user.name %>
                 </a>
-
 
               </li>
 

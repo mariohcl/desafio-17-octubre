@@ -9,6 +9,8 @@
         <div id="navbarNavDropdown" class="navbar-collapse collapse">
             <ul class="navbar-nav mr-auto">
             </ul>
+
+
             <ul class="navbar-nav navbar-nav-custom">
 
               <% if user_signed_in? %>
@@ -17,7 +19,7 @@
               <li class="nav-item"><%= link_to 'Mis ventas', ventas_path %></li>
 
               <li class="nav-item">
-                <a href="<%= profile_path(:id) %>" class="name">
+                <a href="<%= profile_path(current_user) %>" class="name">
                   <%= current_user.name %>
                 </a>
 
